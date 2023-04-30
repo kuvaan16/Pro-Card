@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@200;300&family=M+PLUS+Rounded+1c:wght@300;400;500&family=Oxygen:wght@300;400;700&family=Poppins:wght@100;200;300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: #3498db;
+}
+.main-box{
+    height: 350px;
+    width: 250px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    text-align: center;
+}
+.main-box .content{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    
+}
+.content .box{
+    position: absolute;
+    
+    height: 50px;
+    width: 100%;
+    left: 0;
+    bottom: 30px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.content .box .share, .cancel{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    line-height: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2980b9;
+    background: #fff;
+    letter-spacing: 1px;
+    border-radius: 25px;
+    opacity: 0;
+    transition: all 0.3 ease;
+}
+.content .box .share{
+    opacity: 1;
+}
+#check:checked ~ .box .share{
+    opacity: 0;
+} 
+#check:checked ~ .box .cancel{
+    opacity: 1;
+}
+#check{
+    display: none;
+}
+.content .image-box{
+    position: absolute;
+    height: 250px;
+    width: 100%;
+    border-radius: 25px;
+    background: #fff;
+    padding: 5px;
+    left: 0;
+    bottom: 130px;
+    transition: all 0.4s ease;
+}
+#check:checked ~ .image-box{
+    bottom: 100px;
+}
+.content .image-box::before{
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    background: #fff;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%) rotate(45deg);
+    z-index: -1;
+}
+.content .image-box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+}
+.image-box .about{
+    position: absolute;
+    background: rgba( 0, 0 ,0 ,0.40);
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    border-radius: 25px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+#check:checked ~ .image-box .about{
+    opacity: 1;
+}
+.about .details{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 15px;
+}
+.details .name, 
+.details .job{
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+}
+.details .name{
+    font-size: 18px;
+}
+.details .icons i{
+    font-size: 12px;
+    color: #fff;
+    
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    line-height: 22px;
+    margin: 8px 5px;
+    transition: all 0.3s ease;
+}
+.details .icons i:hover{
+    background: #fff;
+    color: #2980b9;
+}
